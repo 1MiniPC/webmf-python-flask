@@ -20,9 +20,9 @@ class TestHello(unittest.TestCase):
 
     def test_hello_name(self):
         name = 'Simon'
-        rv = self.app.get(f'/hello/{}'.format(name))
+        rv = self.app.get('/hello/{}'.format(name))
         self.assertEqual(rv.status, '200 OK')
-        self.assertIn(bytearray(f"{}".format(name), 'utf-8'), rv.data)
+        self.assertIn(bytearray("{}".format(name), 'utf-8'), rv.data)
 
 if __name__ == '__main__':
     import xmlrunner
